@@ -18,7 +18,7 @@ def resultOfPlayerWin():
 
 #resultOfComputerWin() ändrar datorns antal vinster och presenterar vinnare
 def resultOfComputerWin():
-    computerRoundWins =+1
+    computerRoundWins =+ 1
     print("The computer won")
 
 #calculateWinner() genom if-satser kolla vem som vinner
@@ -54,7 +54,7 @@ def calculateWinner(playerChoice, computerChoice):
 
 #oneRound() ska kontrollera en "sten sax påse" runda
 def oneRound():
-    playerChoice = input("Pick your move by choosing a number:\n1. Rock\n2. Paper\n3. Scissor\n")
+    playerChoice = input("Pick your move by choosing a number:\n1. Rock\n2. Paper\n3. Scissor\nEnter choice: ")
     computerChoice = random.randrange(1,4)
     calculateWinner(int(playerChoice),computerChoice)
 
@@ -74,6 +74,7 @@ def main():
             noWinnerYet = False #Än så länge bara en runda
         playerRoundWins = 0
         playerRoundWins = 0
+        wantsToPlay = False
         #Uppdatera statsen på matcher vunna
     
 
