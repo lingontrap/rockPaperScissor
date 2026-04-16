@@ -13,12 +13,12 @@ def resultOfDraw():
 
 #resultOfPlayerWin() ändrar spelarens antal vinster och presenterar vinnare
 def resultOfPlayerWin():
-    playerRoundWins += 1
+    playerRoundWins =+ 1
     print("You won this round!")
 
 #resultOfComputerWin() ändrar datorns antal vinster och presenterar vinnare
 def resultOfComputerWin():
-    computerRoundWins +=1
+    computerRoundWins =+1
     print("The computer won")
 
 #calculateWinner() genom if-satser kolla vem som vinner
