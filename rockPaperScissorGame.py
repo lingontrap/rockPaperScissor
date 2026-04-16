@@ -1,8 +1,11 @@
+import random
+
 playerWins = 0
 computerWins = 0
 
 playerRoundWins = 0
 computerRoundWins = 0
+
 
 #Ska finnas globala variabler för vunna rundor och för matcher vunna för både datorn och spelaren
 
@@ -13,6 +16,8 @@ computerRoundWins = 0
 #resultOfComputerWin() ändrar datorns antal vinster och presenterar vinnare
 
 #calculateWinner() genom if-satser kolla vem som vinner
+def calculateWinner(playerChoice, computerChoice):
+    return None
     #if för att se om användaren valt 1, jämför sten mot användarens val
         #if för varje möjlig val datorn kan göra
     #if för att se om användaren valt 1, jämför sax mot användarens val
@@ -23,8 +28,9 @@ computerRoundWins = 0
 
 #oneRound() ska kontrollera en "sten sax påse" runda
 def oneRound():
-    return None
-    #Användarens val tas av input ich datorns av slump, sedan räknas vinnaren ut med calculateWinner()
+    playerChoice = input("Pick your move by choosing a number:\n1. Rock\n2. Paper\nScissor")
+    computerChoice = random.randrange(1,4)
+    calculateWinner(int(playerChoice),computerChoice)
 
 #main() ska introducera spelet och hålla en loop för flera rundor
 def main():
