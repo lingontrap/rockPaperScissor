@@ -1,5 +1,6 @@
 import random
 
+#Ska finnas globala variabler för vunna rundor och för matcher vunna för både datorn och spelaren
 playerWins = 0
 computerWins = 0
 
@@ -7,23 +8,47 @@ playerRoundWins = 0
 computerRoundWins = 0
 
 
-#Ska finnas globala variabler för vunna rundor och för matcher vunna för både datorn och spelaren
-
 #resultOfDraw() skriver ut vad som händer vid oavgjort
+def resultOfDraw():
+    return None
 
 #resultOfPlayerWin() ändrar spelarens antal vinster och presenterar vinnare
+def resultOfPlayerWin():
+    return None
 
 #resultOfComputerWin() ändrar datorns antal vinster och presenterar vinnare
+def resultOfComputerWin():
+    return None
 
 #calculateWinner() genom if-satser kolla vem som vinner
 def calculateWinner(playerChoice, computerChoice):
-    return None
     #if för att se om användaren valt 1, jämför sten mot användarens val
+    if(playerChoice==1):
         #if för varje möjlig val datorn kan göra
-    #if för att se om användaren valt 1, jämför sax mot användarens val
+        if(computerChoice==1):
+            resultOfDraw()
+        elif(computerChoice==2):
+            resultOfComputerWin()
+        else:
+            resultOfPlayerWin
+    #elif för att se om användaren valt 2, jämför sax mot användarens val
+    elif(playerChoice==2):
         #if för varje möjlig val datorn kan göra
-    #if för att se om användaren valt 1, jämför sax mot användarens val
+        if(computerChoice==1):
+            resultOfPlayerWin()
+        elif(computerChoice==2):
+            resultOfDraw()
+        else:
+            resultOfComputerWin()
+    #else för att se om användaren valt 3, jämför sax mot användarens val
+    else:
         #if för varje möjlig val datorn kan göra
+        if(computerChoice==1):
+            resultOfComputerWin()
+        elif(computerChoice==2):
+            resultOfPlayerWin()
+        else:
+            resultOfDraw()
             
 
 #oneRound() ska kontrollera en "sten sax påse" runda
