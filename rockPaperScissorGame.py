@@ -13,11 +13,13 @@ def resultOfDraw():
 
 #resultOfPlayerWin() ändrar spelarens antal vinster och presenterar vinnare
 def resultOfPlayerWin():
+    global playerRoundWins
     playerRoundWins =+ 1
     print("You won this round!")
 
 #resultOfComputerWin() ändrar datorns antal vinster och presenterar vinnare
 def resultOfComputerWin():
+    global computerRoundWins
     computerRoundWins =+ 1
     print("The computer won")
 
@@ -60,6 +62,11 @@ def oneRound():
 
 #main() ska introducera spelet och hålla en loop för flera rundor
 def main():
+    global playerWins
+    global computerWins
+    global playerRoundWins
+    global computerRoundWins
+
 
     #while-loop som körs tills spelaren inte längre vill spela
     wantsToPlay = True
