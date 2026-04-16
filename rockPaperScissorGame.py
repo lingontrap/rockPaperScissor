@@ -22,11 +22,27 @@ computerRoundWins = 0
             
 
 #oneRound() ska kontrollera en "sten sax påse" runda
+def oneRound():
+    return None
     #Användarens val tas av input ich datorns av slump, sedan räknas vinnaren ut med calculateWinner()
 
 #main() ska introducera spelet och hålla en loop för flera rundor
+def main():
+
     #while-loop som körs tills spelaren inte längre vill spela
+    wantsToPlay = True
+    while(wantsToPlay):
+        print("Welcome to rock, paper, scissor! You'll be playing one round.\nYou'll be playing against the computer.")
+        print("-"*20)
         #while-loop som körs tills någon vunnit "bäst av..."
+        noWinnerYet = True
+        while(noWinnerYet):
             #Anropar en runde per loop
-        #När ute ur inre loopen, nollställ vunna rundor
+            oneRound()
+            noWinnerYet = False #Än så länge bara en runda
+        playerRoundWins = 0
+        playerRoundWins = 0
         #Uppdatera statsen på matcher vunna
+    
+
+main()
