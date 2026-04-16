@@ -33,7 +33,7 @@ def calculateWinner(playerChoice, computerChoice):
         elif(computerChoice==2):
             resultOfComputerWin()
         else:
-            resultOfPlayerWin
+            resultOfPlayerWin()
     #elif för att se om användaren valt 2, jämför sax mot användarens val
     elif(playerChoice==2):
         #if för varje möjlig val datorn kan göra
@@ -82,9 +82,9 @@ def main():
 
     #while-loop som körs tills spelaren inte längre vill spela
     wantsToPlay = True
-    rounds = int(input("How many rounds do you want to play \"best of\" for? It has to be an uneven number!\nEnter amount of rounds: "))
-    neededRoundsToWin = (rounds+1)/2
     while(wantsToPlay):
+        rounds = int(input("How many rounds do you want to play \"best of\" for? It has to be an uneven number!\nEnter amount of rounds: "))
+        neededRoundsToWin = (rounds+1)/2
         print("-"*20)
         print("Welcome to rock, paper, scissor! You'll be playing one round.\nYou'll be playing against the computer.")
         print("-"*20)
@@ -101,7 +101,7 @@ def main():
         playerRoundWins = 0
         computerRoundWins = 0
         wantsToPlay = wantsToPlayAgain()
-        print(wantsToPlay)
         #Uppdatera statsen på matcher vunna
+    print(f"After all your games, the result is:\nYour score is {playerWins}\nThe computers score is {computerWins}")
 
 main()
