@@ -54,7 +54,7 @@ def calculateWinner(playerChoice, computerChoice):
 
 #oneRound() ska kontrollera en "sten sax påse" runda
 def oneRound():
-    playerChoice = input("Pick your move by choosing a number:\n1. Rock\n2. Paper\nScissor")
+    playerChoice = input("Pick your move by choosing a number:\n1. Rock\n2. Paper\n3. Scissor\n")
     computerChoice = random.randrange(1,4)
     calculateWinner(int(playerChoice),computerChoice)
 
