@@ -53,11 +53,20 @@ def calculateWinner(playerChoice, computerChoice):
         else:
             resultOfDraw()
             
+#function that handles if-statement to deliver the news of the computers choice
+def computerChoiceInformation(computerChoiceNum):
+    if(computerChoiceNum==1):
+        print("The computer choosed rock")
+    elif(computerChoiceNum==2):
+        print("The computer choosed paper")
+    else:
+        print("The computer choosed scissor")
 
 #oneRound() ska kontrollera en "sten sax påse" runda
 def oneRound():
     playerChoice = input("Pick your move by choosing a number:\n1. Rock\n2. Paper\n3. Scissor\nEnter choice: ")
     computerChoice = random.randrange(1,4)
+    computerChoiceInformation(computerChoice)
     calculateWinner(int(playerChoice),computerChoice)
     print(f"Player has:   {playerRoundWins} rounds")
     print(f"Computer has: {computerRoundWins} rounds")
@@ -84,9 +93,9 @@ def main():
     wantsToPlay = True
     while(wantsToPlay):
         rounds = int(input("How many rounds do you want to play \"best of\" for? It has to be an uneven number!\nEnter amount of rounds: "))
-        neededRoundsToWin = (rounds+1)/2
+        neededRoundsToWin = int((rounds+1)/2)
         print("-"*20)
-        print("Welcome to rock, paper, scissor! You'll be playing one round.\nYou'll be playing against the computer.")
+        print(f"Welcome to rock, paper, scissor! You'll be playing {neededRoundsToWin} rounds.\nYou'll be playing against the computer.")
         print("-"*20)
         #while-loop som körs tills någon vunnit "bäst av..."
         while(playerRoundWins!=neededRoundsToWin and computerRoundWins!=neededRoundsToWin):
