@@ -63,7 +63,6 @@ def oneRound():
     print(f"Computer has: {computerRoundWins} rounds")
     print("-"*20)
 
-
 #main() ska introducera spelet och hålla en loop för flera rundor
 def main():
     #Definierar globala variabler för main()
@@ -83,10 +82,15 @@ def main():
         while(playerRoundWins!=neededRoundsToWin and computerRoundWins!=neededRoundsToWin):
             #Anropar en runde per loop
             oneRound()
+        if(playerRoundWins>computerRoundWins):
+            playerWins = playerWins+1
+            print("You won!")
+        else:
+            computerWins = computerWins+1
+            print("The computer won :(")
         playerRoundWins = 0
-        playerRoundWins = 0
+        computerRoundWins = 0
         wantsToPlay = False
         #Uppdatera statsen på matcher vunna
-    
 
 main()
