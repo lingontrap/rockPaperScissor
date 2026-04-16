@@ -14,13 +14,13 @@ def resultOfDraw():
 #resultOfPlayerWin() ändrar spelarens antal vinster och presenterar vinnare
 def resultOfPlayerWin():
     global playerRoundWins
-    playerRoundWins =+ 1
+    playerRoundWins =+ playerRoundWins + 1
     print("You won this round!")
 
 #resultOfComputerWin() ändrar datorns antal vinster och presenterar vinnare
 def resultOfComputerWin():
     global computerRoundWins
-    computerRoundWins =+ 1
+    computerRoundWins = computerRoundWins + 1
     print("The computer won")
 
 #calculateWinner() genom if-satser kolla vem som vinner
@@ -59,26 +59,30 @@ def oneRound():
     playerChoice = input("Pick your move by choosing a number:\n1. Rock\n2. Paper\n3. Scissor\nEnter choice: ")
     computerChoice = random.randrange(1,4)
     calculateWinner(int(playerChoice),computerChoice)
+    print(f"Player has:   {playerRoundWins} rounds")
+    print(f"Computer has: {computerRoundWins} rounds")
+    print("-"*20)
+
 
 #main() ska introducera spelet och hålla en loop för flera rundor
 def main():
+    #Definierar globala variabler för main()
     global playerWins
     global computerWins
     global playerRoundWins
     global computerRoundWins
 
-
     #while-loop som körs tills spelaren inte längre vill spela
     wantsToPlay = True
+    rounds = int(input("How many rounds do you want to play \"best of\" for? It has to be an uneven number!\nEnter amount of rounds: "))
+    neededRoundsToWin = (rounds+1)/2
     while(wantsToPlay):
         print("Welcome to rock, paper, scissor! You'll be playing one round.\nYou'll be playing against the computer.")
         print("-"*20)
         #while-loop som körs tills någon vunnit "bäst av..."
-        noWinnerYet = True
-        while(noWinnerYet):
+        while(playerRoundWins!=neededRoundsToWin and computerRoundWins!=neededRoundsToWin):
             #Anropar en runde per loop
             oneRound()
-            noWinnerYet = False #Än så länge bara en runda
         playerRoundWins = 0
         playerRoundWins = 0
         wantsToPlay = False
