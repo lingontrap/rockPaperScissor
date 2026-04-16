@@ -63,6 +63,15 @@ def oneRound():
     print(f"Computer has: {computerRoundWins} rounds")
     print("-"*20)
 
+#wantsToPlatAgain() checks and returns wether the player wants to play again
+def wantsToPlayAgain():
+    answer = int(input("Do you want to play again?\n1.Yes\n2.No\nEnter number for answer: "))
+    if(answer==1):
+        return True
+    else:
+        return False
+
+
 #main() ska introducera spelet och hålla en loop för flera rundor
 def main():
     #Definierar globala variabler för main()
@@ -76,6 +85,7 @@ def main():
     rounds = int(input("How many rounds do you want to play \"best of\" for? It has to be an uneven number!\nEnter amount of rounds: "))
     neededRoundsToWin = (rounds+1)/2
     while(wantsToPlay):
+        print("-"*20)
         print("Welcome to rock, paper, scissor! You'll be playing one round.\nYou'll be playing against the computer.")
         print("-"*20)
         #while-loop som körs tills någon vunnit "bäst av..."
@@ -90,7 +100,8 @@ def main():
             print("The computer won :(")
         playerRoundWins = 0
         computerRoundWins = 0
-        wantsToPlay = False
+        wantsToPlay = wantsToPlayAgain()
+        print(wantsToPlay)
         #Uppdatera statsen på matcher vunna
 
 main()
