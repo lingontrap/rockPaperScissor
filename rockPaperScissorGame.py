@@ -7,18 +7,19 @@ computerWins = 0
 playerRoundWins = 0
 computerRoundWins = 0
 
-
 #resultOfDraw() skriver ut vad som händer vid oavgjort
 def resultOfDraw():
-    return None
+    print("It resultet in a draw")
 
 #resultOfPlayerWin() ändrar spelarens antal vinster och presenterar vinnare
 def resultOfPlayerWin():
-    return None
+    playerRoundWins += 1
+    print("You won this round!")
 
 #resultOfComputerWin() ändrar datorns antal vinster och presenterar vinnare
 def resultOfComputerWin():
-    return None
+    computerRoundWins +=1
+    print("The computer won")
 
 #calculateWinner() genom if-satser kolla vem som vinner
 def calculateWinner(playerChoice, computerChoice):
